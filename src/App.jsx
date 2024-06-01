@@ -1,6 +1,6 @@
 const App = () => {
   return (
-    <div>
+    <div className="container">
       App Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aperiam
       ad illo aut praesentium eum odit. Deleniti sit modi illum ipsum eveniet
       odio ipsa suscipit minima autem mollitia necessitatibus magnam minus hic
