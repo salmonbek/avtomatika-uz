@@ -1,0 +1,23 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    &-link{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+    &-btn{
+        display: flex;
+        align-items: center;
+        gap: 45px;
+
+        input{
+            padding: 6px 22px;
+        }
+        button{
+            padding: 6px 20px;
+        }
+    }
+}
