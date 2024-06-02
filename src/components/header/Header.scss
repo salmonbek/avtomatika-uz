@@ -28,6 +28,7 @@
         padding: 2rem;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         transition: left 0.3s ease-in-out;
+        z-index: 10; /* Ensure the menu is above other elements */
 
         &.open {
           left: 0;
@@ -50,6 +51,7 @@
 
         input {
           padding: 8px 25px;
+          z-index: 5; /* Ensure the input is above other elements */
         }
 
         .search-icon {
@@ -78,6 +80,9 @@
 
       @media (max-width: 870px) {
         display: block;
+        z-index: 15; /* Ensure the hamburger is above other elements */
+        position: relative; /* Adjust position if necessary */
+        margin-left: 10px; /* Add some margin to prevent overlap */
       }
     }
   }
@@ -89,6 +94,7 @@
       .nav-btn {
         input {
           padding: 5px 15px;
+          ba
         }
       }
     }
