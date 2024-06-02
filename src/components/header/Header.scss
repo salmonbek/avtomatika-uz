@@ -1,23 +1,29 @@
-.nav{
+// header section style start
+.header {
+  background-color: rgb(25, 156, 231);
+  padding: 25px 0;
+  width: 100%;
+  .nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 15px;
-    &-link{
-        display: flex;
-        align-items: center;
-        gap: 50px;
+    align-items: center;
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 40px;
     }
-    &-btn{
-        display: flex;
-        align-items: center;
-        gap: 45px;
-
-        input{
-            padding: 6px 22px;
-        }
-        button{
-            padding: 6px 20px;
-        }
+    &-btn {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      input {
+        padding: 10px 30px;
+      }
+      button * {
+        width: 30px;
+        height: 30px;
+        color: white;
+      }
     }
+  }
 }

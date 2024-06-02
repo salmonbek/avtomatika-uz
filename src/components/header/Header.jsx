@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Header.scss";
+import { FaShoppingBag } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="container">
-      <nav className="nav">
+    <header className="header">
+      <nav className="nav container">
         <div className="nav-logo">
-          <Link to={'/'}>Logo</Link>
+          <Link to={"/"}>Logo</Link>
         </div>
         <div className="nav-link">
           <Link to="/">Home</Link>
@@ -17,9 +18,9 @@ const Header = () => {
           <Link to="/news">New</Link>
         </div>
         <div className="nav-btn">
-          <input type="text" placeholder="Search" />
-          <button>
-            Savat
+          <input type="text" placeholder="Search..." />
+          <button className="icon-shop">
+            <FaShoppingBag />
           </button>
         </div>
       </nav>
