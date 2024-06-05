@@ -1,13 +1,11 @@
 .header {
   padding: 20px;
-  background-color: rgb(114, 167, 237);
 
   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-
     .nav-logo {
       font-size: 1.5rem;
     }
@@ -16,7 +14,6 @@
       display: flex;
       gap: 1rem;
       align-items: center;
-
       @media (max-width: 870px) {
         position: fixed;
         top: 0;
@@ -28,7 +25,7 @@
         padding: 2rem;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         transition: left 0.3s ease-in-out;
-        z-index: 10; /* Ensure the menu is above other elements */
+        z-index: 10;
 
         &.open {
           left: 0;
@@ -44,13 +41,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 15px;
-
+      gap: 20px;
       .search-container {
         position: relative;
-
         input {
           padding: 8px 25px;
+          border: 1px solid rgb(41, 134, 233);
           z-index: 5; /* Ensure the input is above other elements */
         }
 
@@ -67,7 +63,7 @@
       .icon-shop * {
         width: 20px;
         height: 20px;
-        color: rgb(255, 245, 194);
+        color: rgb(22, 132, 183);
       }
     }
 
@@ -82,7 +78,7 @@
         display: block;
         z-index: 15; /* Ensure the hamburger is above other elements */
         position: relative; /* Adjust position if necessary */
-        margin-left: 10px; 
+        margin-left: 10px;
       }
     }
   }

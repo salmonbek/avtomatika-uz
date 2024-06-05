@@ -60,9 +60,6 @@ a {
   text-decoration: none;
   color: black;
 }
-main {
-  padding: 25px;
-}
 
 body {
   font-family: "Nunito Sans", sans-serif !important;
@@ -73,6 +70,9 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+button:hover {
+  transition: 0.2s;
 }
 input {
   outline: none;
@@ -87,6 +87,70 @@ input {
   max-width: 1400px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+// home section style start here////
+.main {
+  .hero-section {
+    position: relative;
+    background-image: url("../assets/images/hero-bg2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+    .container {
+      .hero-flex {
+        display: flex;
+        .hero-left {
+          z-index: 10;
+          margin-top: 160px;
+          position: absolute;
+          max-width: 700px;
+          font-size: 35px;
+          h1 {
+            color: rgb(255, 255, 255);
+            margin-bottom: 30px;
+          }
+          p {
+            color: rgb(208, 208, 208);
+            margin-bottom: 70px;
+          }
+          .hero-btn {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            &-1 {
+              border-radius: 7px;
+              padding: 8px 30px;
+              background-color: rgb(41, 134, 233);
+              color: rgb(235, 234, 234);
+            }
+            &-2 {
+              border-radius: 7px;
+              padding: 8px 30px;
+              border: 1px solid rgb(41, 134, 233);
+              color: rgb(235, 234, 234);
+              &:hover {
+                background-color: rgb(41, 134, 233);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+  }
 }
