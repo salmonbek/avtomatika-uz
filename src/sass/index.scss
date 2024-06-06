@@ -94,6 +94,8 @@ input {
 // home section style start here////
 .main {
   .hero-section {
+    padding-bottom: 40px;
+    margin-bottom: 100px;
     position: relative;
     background-image: url("../assets/images/hero-bg2.jpg");
     background-size: cover;
@@ -104,11 +106,11 @@ input {
     overflow: hidden;
     .container {
       .hero-flex {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         .hero-left {
           z-index: 10;
           margin-top: 160px;
-          position: absolute;
           max-width: 700px;
           font-size: 35px;
           h1 {
@@ -118,6 +120,7 @@ input {
           p {
             color: rgb(208, 208, 208);
             margin-bottom: 70px;
+            font-size: 30px;
           }
           .hero-btn {
             display: flex;
@@ -141,6 +144,81 @@ input {
             }
           }
         }
+        .hero-right {
+          margin-top: 100px;
+          position: relative;
+          width: 100%;
+          height: 400px; /* Reduced height for the images */
+          overflow: hidden;
+        }
+
+        .hero-right img {
+          position: absolute;
+          top: 0;
+          left: 100%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity 1s ease-in-out, left 1s ease-in-out;
+          z-index: 0;
+        }
+
+        .hero-right img.active {
+          left: 0;
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .hero-right img.prev {
+          left: -100%;
+          opacity: 1;
+        }
+
+        .hero-right img.next {
+          left: 100%;
+          opacity: 1;
+        }
+
+        .carousel-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, 0.5);
+          border: none;
+          color: white;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 2;
+        }
+
+        .carousel-arrow.left {
+          left: 10px;
+        }
+
+        .carousel-arrow.right {
+          right: 10px;
+        }
+
+        .pagination {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+        }
+
+        .pagination-circle {
+          width: 12px;
+          height: 12px;
+          margin: 0 5px;
+          border-radius: 50%;
+          background-color: rgb(208, 208, 208);
+          transition: background-color 0.3s ease-in-out;
+        }
+
+        .pagination-circle.active {
+          background-color: rgb(41, 134, 233);
+        }
       }
     }
   }
@@ -152,5 +230,32 @@ input {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.55);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    .hero-section {
+      .container {
+        .hero-flex {
+          grid-template-columns: 1fr;
+          .hero-left {
+            margin-top: 70px;
+            h1 {
+              font-size: 30px;
+              text-align: center;
+            }
+            p {
+              text-align: center;
+              font-size: 15px;
+            }
+            .hero-btn {
+              justify-content: center;
+              gap: 15px;
+            }
+          }
+        }
+      }
+    }
   }
 }
