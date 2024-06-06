@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import { FaShoppingBag, FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import Logo from '../../../assets/images/logo.png'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +15,9 @@ const Header = () => {
     <header className="header">
       <nav className="nav container">
         <div className="nav-logo">
-          <Link to={"/"}>Logo</Link>
+          <Link to={"/"}> 
+          <img src={Logo} alt="logo pizdes bolgan" />
+          </Link>
         </div>
         <div className={`nav-link ${menuOpen ? "open" : ""}`}>
           <Link to="/" onClick={handleMenuToggle}>
@@ -32,9 +35,7 @@ const Header = () => {
           <Link to="/contact" onClick={handleMenuToggle}>
             Contact
           </Link>
-          <Link to="/news" onClick={handleMenuToggle}>
-            New
-          </Link>
+         
         </div>
         <div className="nav-btn">
           <div className="search-container">

@@ -1,12 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
-import About from '../pages/About'
-import New from '../pages/New'
-import Service from '../pages/Service'
-import Shop from '../pages/Shop';
-import Contact from '../pages/Contact';
-import Header from '../components/header/Header'
+import About from './../pages/About';
+import Service from './../pages/Service';
+import Shop from './../pages/Shop';
+import Contact from './../pages/Contact';
+import Header from '../components/home/header/Header';
 
 const Router = () => {
   return (
@@ -18,7 +17,6 @@ const Router = () => {
         <Route path='/service' element={<Service />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/new' element={<New />} />
       
       </Routes>
       
