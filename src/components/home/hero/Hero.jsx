@@ -1,6 +1,34 @@
-import Hero from "../components/home/hero/Hero";
+import { useState, useEffect } from "react";
+import Pagination1 from "../../../assets/images/hero-pagination1.jpg";
+import Pagination2 from "../../../assets/images/hero-pagination2.jpg";
+import Pagination3 from "../../../assets/images/hero-pagination3.jpg";
+import Pagination4 from "../../../assets/images/hero-pagination4.jpg";
+import "./Hero.scss";
+// New image
 
-const Home = () => {
+const images = [Pagination1, Pagination2, Pagination3, Pagination4]; // Include the new image
+
+const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [direction, setDirection] = useState("next");
+
+  const goToNextImage = () => {
+    setDirection("next");
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const goToPrevImage = () => {
+    setDirection("prev");
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(goToNextImage, 3000);
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   return (
     <div>
       <main className="main">
@@ -28,8 +56,7 @@ const Home = () => {
                 </button>
                 <button
                   className="carousel-arrow right"
-                  onClick={goToNextImage}
-                >
+                  onClick={goToNextImage}>
                   &#10095;
                 </button>
                 {images.map((image, index) => (
@@ -84,4 +111,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;
