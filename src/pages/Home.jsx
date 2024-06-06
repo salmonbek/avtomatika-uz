@@ -91,20 +91,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="section">
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            ad, commodi autem esse, eos in quisquam tempore libero natus alias
-            quo dolorem consequuntur beatae quaerat harum enim laboriosam veniam
-            impedit.
-          </div>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            ad, commodi autem esse, eos in quisquam tempore libero natus alias
-            quo dolorem consequuntur beatae quaerat harum enim laboriosam veniam
-            impedit.
-          </div>
-        </section>
+        <section className="section-recomandation"></section>
       </main>
     </div>
   );
