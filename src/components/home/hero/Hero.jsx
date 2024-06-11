@@ -8,6 +8,7 @@ import { CiHeart } from "react-icons/ci";
 import { RiTeamFill } from "react-icons/ri";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import Video from "../../../assets/videos/video-bg.mp4";
 
 const Hero = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -33,7 +34,7 @@ const Hero = () => {
     <main>
       <div className="hero">
         <video className="video-bg" autoPlay loop muted>
-          <source src="../../../../src/assets/videos/video-bg.mp4" />
+          <source src={Video} />
         </video>
         <div className="container">
           <h1>BIZ SIZGA YORDAM BERISHIMIZ MUMKUNLIGIDAN HURSANDMIZ</h1>
