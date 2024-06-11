@@ -1,14 +1,21 @@
 .header {
   padding: 20px;
+  position: relative; // Ensure header stays in place
+  background-color: white;
 
   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+
+    span * {
+      color: rgb(53, 170, 249);
+    }
+
     .nav-logo {
       font-size: 1.5rem;
-      img{
+
+      img {
         width: 200px;
         height: 40px;
       }
@@ -18,18 +25,20 @@
       display: flex;
       gap: 60px;
       align-items: center;
-      @media (max-width: 870px) {
+
+      @media (max-width: 760px) {
         position: fixed;
         top: 0;
         left: -100%;
         height: 100%;
         width: 250px;
-        flex-direction: column;
-        background-color: #fff;
+        flex-direction: column; // Ensure it is in a column
+        color: white !important;
+        background-color: #000000;
         padding: 2rem;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         transition: left 0.3s ease-in-out;
-        z-index: 10;
+        z-index: 20; // Ensure the menu is above other elements
 
         &.open {
           left: 0;
@@ -37,6 +46,7 @@
 
         a {
           margin-bottom: 1rem;
+          color: white; // Ensure link text color is white
         }
       }
     }
@@ -46,12 +56,14 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+
       .search-container {
         position: relative;
+
         input {
           padding: 8px 25px;
           border: 1px solid rgb(41, 134, 233);
-          z-index: 5; /* Ensure the input is above other elements */
+          z-index: 5;
         }
 
         .search-icon {
@@ -77,12 +89,22 @@
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
+      color: black; // Set the hamburger button color to black
 
-      @media (max-width: 870px) {
+      @media (max-width: 760px) {
         display: block;
-        z-index: 15; /* Ensure the hamburger is above other elements */
-        position: relative; /* Adjust position if necessary */
+        z-index: 25; // Ensure the hamburger is above other elements
+        position: relative;
         margin-left: 10px;
+
+        span {
+          font-size: 1.5rem;
+          color: black; // Set the span color to black
+        }
+
+        &.open span {
+          font-size: 2rem;
+        }
       }
     }
   }

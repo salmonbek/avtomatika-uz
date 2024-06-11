@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import { FaShoppingBag, FaBars, FaTimes, FaSearch } from "react-icons/fa";
-import Logo from '../../../assets/images/logo.png'
+import { FaHome } from "react-icons/fa";
+import { FcAbout } from "react-icons/fc";
+import { MdMiscellaneousServices } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,40 +17,42 @@ const Header = () => {
     <header className="header">
       <nav className="nav container">
         <div className="nav-logo">
-          <Link to={"/"}> 
-          Logo
-          </Link>
+          <Link to={"/"}> Logo</Link>
         </div>
         <div className={`nav-link ${menuOpen ? "open" : ""}`}>
           <Link to="/" onClick={handleMenuToggle}>
-            Home
+            <span>
+              <FaHome />
+            </span>{" "}
+            Uy
           </Link>
           <Link to="/about" onClick={handleMenuToggle}>
-            About
+            <span>
+              <FcAbout />
+            </span>{" "}
+            Biz haqimizda
           </Link>
           <Link to="/service" onClick={handleMenuToggle}>
-            Service
-          </Link>
-          <Link to="/shop" onClick={handleMenuToggle}>
-            Shop
+            <span>
+              <MdMiscellaneousServices />
+            </span>{" "}
+            Xizmatlar
           </Link>
           <Link to="/contact" onClick={handleMenuToggle}>
-            Contact
+            <span>
+              <IoMdCall />
+            </span>{" "}
+            Aloqa
           </Link>
-         
         </div>
         <div className="nav-btn">
-          <div className="search-container">
-            <input type="text" placeholder="Search..." />
-            <FaSearch className="search-icon" />
+          <div
+            className={`hamburger ${menuOpen ? "open" : ""}`}
+            onClick={handleMenuToggle}
+          >
+            {menuOpen ? <span>&times;</span> : <span>&#9776;</span>}
           </div>
-          <button className="icon-shop">
-            <FaShoppingBag />
-          </button>
         </div>
-        <button className="hamburger" onClick={handleMenuToggle}>
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
       </nav>
     </header>
   );
